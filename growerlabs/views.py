@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . models import *
 
 from django.core.mail import EmailMessage
 from django.conf import settings

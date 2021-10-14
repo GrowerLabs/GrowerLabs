@@ -38,3 +38,24 @@ def contact(request):
         # print(email_obj)
 
     return render(request, 'contact.html')
+
+def about(request):
+    profile = Profile.objects.all()
+    context = {
+        "profile":profile,
+    }
+    return render(request, 'about.html', context)
+
+def projects(request):
+    projects = Project.objects.all()
+    context = {
+        "projects":projects,
+    }
+    return render(request, 'projects.html', context)    
+
+def profile(request, pk):
+    prof = Profile.objects.filter(pk=pk)[0]
+    context={
+        "prof":prof,      
+    }
+    return render(request,"profile.html", context)        

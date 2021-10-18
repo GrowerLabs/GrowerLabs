@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from . models import *
 
 from django.core.mail import EmailMessage
@@ -59,3 +59,6 @@ def profile(request, pk):
         "prof":prof,      
     }
     return render(request,"profile.html", context)        
+
+def services(request):
+    return HttpResponse("services")

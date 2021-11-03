@@ -55,8 +55,10 @@ def projects(request):
 
 def profile(request, pk):
     prof = Profile.objects.filter(pk=pk)[0]
+    user_name = prof.github_link.split('/')[3]
     context={
-        "prof":prof,      
+        "prof":prof, 
+        "user_name":user_name     
     }
     return render(request,"profile.html", context)        
 

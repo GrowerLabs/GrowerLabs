@@ -55,12 +55,12 @@ def projects(request):
 
 def profile(request, pk):
     prof = Profile.objects.filter(pk=pk)[0]
-    user_name = prof.github_link.split('/')[3]
-    context={
-        "prof":prof, 
-        "user_name":user_name     
-    }
-    return render(request,"profile.html", context)        
 
-def services(request):
-    return HttpResponse("services")
+    if prof.github_link is not None:
+        user_name = prof.github_link.split('/')[3]
+        return render(request,"profile.html", { "prof":prof, "user_name":user_name })
+    
+    else:
+        return render(request,"profile.html", { "prof":prof })
+
+  

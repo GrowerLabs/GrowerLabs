@@ -11,6 +11,7 @@ class Skill(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length=300)
+    role = models.CharField(max_length=300)
     bio = models.TextField(blank=True, null=True)
     dp = models.ImageField(upload_to = 'dp', null= True)
     prof_user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,7 +21,7 @@ class Profile(models.Model):
     linkedin_link = models.URLField(null= True, blank=True)
     skills = models.ManyToManyField(Skill, related_name="skills")
     def __str__(self):
-        return str(self.prof_user.username) + " " + str(self.name)        
+        return str(self.prof_user.username) + " " + str(self.name) + " " + str(self.role)   
 
 class Project(models.Model):
     title = models.CharField(max_length=300)

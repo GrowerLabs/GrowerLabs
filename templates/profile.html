@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'styleportfolio.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -13,6 +15,8 @@
   <title>Document</title>
 </head>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://unpkg.com/octicons@4.4.0/build/font/octicons.css">
 <link rel="stylesheet" href="https://unpkg.com/github-activity-feed@latest/dist/github-activity.min.css">
@@ -21,22 +25,17 @@
 <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 
 <style>
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    margin-top: 20px;
-    background: #eee;
-  }
-
   .github {
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
 
   .gha-feed {
     width: 100%;
     height: 600px;
-    margin: 30px 0px;
+    margin: 3em 0em;
   }
 
   .gha-header {
@@ -102,7 +101,7 @@
 
 <body>
 
-  <div class="card" style="width: 18rem;">
+  <!-- <div class="card" style="width: 18rem;">
     <img src="{{prof.dp.url}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{prof.prof_user.username}}</h5>
@@ -130,12 +129,109 @@
 
 
     </div>
+  </div> -->
+
+  <!-- navbar start -->
+
+  <header class="header">
+    <a href="" class="logo"><img src="{% static 'img/logo.png' %}" alt=""></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#" class="active">About Us</a></li>
+      <li><a href="#">Projects</a></li>
+      <li class="contact"><a href="#">Let's Talk</a></li>
+    </ul>
+  </header>
+
+  <!-- navbar end -->
+
+  <!-- Portfolio start -->
+
+
+  <div class="container portfolio">
+    <div class="bio-info">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 bio">
+              <div class="bio-image">
+                <img src="{{prof.dp.url}}" alt="image" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="bio-content">
+            <h1>{{prof.name}}</h1>
+            <h3>{{prof.role}}</h3>
+
+            {% if prof.bio is not null %}
+            <p>{{prof.bio}}</p>
+            {% endif%}
+
+            <div class="links">
+              <ul>
+
+                {% if prof.github_link is not null %}
+                <li>
+                  <a href="{{prof.github_link}}"><i class="fab fa-github"></i></a>
+                </li>
+                {% endif%}
+
+                {% if prof.linkedin_link is not null %}
+                <li>
+                  <a href="{{prof.linkedin_link}}"><i class="fab fa-linkedin"></i></a>
+                </li>
+                {% endif%}
+
+                {% if prof.portfolio_link is not null %}
+                <li>
+                  <a href="{{prof.portfolio_link}}"><i class="fas fa-envelope"></i></a>
+                </li>
+                {% endif%}
+
+                {% if prof.insta_link is not null %}
+                <li>
+                  <a href="{{prof.insta_link}}"><i class="fab fa-instagram"></i></a>
+                </li>
+                {% endif%}
+
+              </ul>
+
+            </div>
+
+            <p>
+              Skills :&nbsp;
+              {% for j in prof.skills.all %}
+              <button class="button">{{j.skill}}</button>
+
+              {% endfor %}
+            </p>
+            <p>
+              Contributions :&nbsp;
+
+              {% for j in prof.contributors.all %}
+
+              <button class="button">{{j.title}}</button>
+              {% endfor %}
+
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- Portfolio end -->
+
+  <!-- github info start -->
+
+  {% if prof.github_link is not null %}
 
   <div class="github">
-
-
 
     <div class="graph">
       <div class="calendar">
@@ -148,7 +244,6 @@
     </div>
 
   </div>
-
 
 
   <script type="text/javascript" src="https://unpkg.com/mustache@4.2.0/mustache.min.js"></script>
@@ -168,6 +263,10 @@
   <script>
     GitHubCalendar(".calendar", "{{user_name}}", { responsive: true });
   </script>
+
+  <!-- github info end -->
+
+  {% endif%}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"

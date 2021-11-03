@@ -215,7 +215,7 @@
         font-size: 10px;
     } */
   }
-
+  
   /* portfolio */
   /* body{
 		background: linear-gradient(90deg, #e8e8e8 50%, #3d009e 50%);
@@ -261,9 +261,13 @@
 	}
 	.bio-image{
 		text-align:center;
+
+    
 	}
 	.bio-image img{
 		border-radius:50%;
+    width: 283px; 
+    height: 283px;
 	}
 
   
@@ -283,7 +287,9 @@
   @media screen and (max-width:768px) {
     .bio-image img{
       border-radius:50%;
-      width: 8rem ;
+      width: 200px;
+      height: 200px;
+      box-shadow: 0px 5px 20px .9px #3F3F3F;
     }
     .bio-content{
       text-align: center;
@@ -306,5 +312,11 @@
   .links i{
     color: rgb(159, 17, 202);
     font-size: 1.5rem;
+  }
+
+  .button{
+    padding: 5px 7px 5px 7px;
+    background-color: rgb(159, 17, 202);
+    border-radius: 5px;
   }
   

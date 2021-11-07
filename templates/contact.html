@@ -23,10 +23,10 @@
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Projects</a></li>
-            <li class="contact"><a href="#" class="active">Let's Talk</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li class="contact"><a href="{% url 'contact' %}" class="active">Let's Talk</a></li>
         </ul>
     </header>
 

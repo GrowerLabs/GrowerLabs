@@ -11,6 +11,7 @@
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
 
   <title>Document</title>
 </head>
@@ -138,10 +139,10 @@
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#" class="active">About Us</a></li>
-      <li><a href="#">Projects</a></li>
-      <li class="contact"><a href="#">Let's Talk</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}" class="active">About Us</a></li>
+      <li><a href="{% url 'projects' %}">Projects</a></li>
+      <li class="contact"><a href="{% url 'contact' %}">Let's Talk</a></li>
     </ul>
   </header>
 
@@ -188,7 +189,7 @@
 
                 {% if prof.portfolio_link is not null %}
                 <li>
-                  <a href="{{prof.portfolio_link}}"><i class="fas fa-envelope"></i></a>
+                  <a href="{{prof.portfolio_link}}"><i class="fal fa-globe"></i></a>
                 </li>
                 {% endif%}
 
@@ -209,8 +210,10 @@
 
               {% endfor %}
             </p>
+
+       {% if prof.contributors.all|length != 0 %}
             <p>
-              Contributions :&nbsp;
+              Contributions :&nbsp; 
 
               {% for j in prof.contributors.all %}
 
@@ -218,6 +221,8 @@
               {% endfor %}
 
             </p>
+               {% endif%}
+
           </div>
 
         </div>

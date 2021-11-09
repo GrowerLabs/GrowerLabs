@@ -305,3 +305,27 @@
 .copyright a:hover{
   color: #d75ddb;
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+ border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background:linear-gradient(to top, rgba(216, 23, 248, 1),rgba(0, 225, 212, 1));
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgb(181, 4, 197); 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+  border-radius: 10px;
+}

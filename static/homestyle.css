@@ -267,7 +267,7 @@
     font-family: "Circular Std Book 450", sans-serif;
     font-weight: lighter;
     color: #fff;
-    font-size: 3.8rem;
+    font-size: 4rem;
     margin-bottom: 10px;
     padding-top: 50px;
   }
@@ -275,7 +275,7 @@
   .title {
     color: #d5d5d5;
     font-family: "Circular Std Book 450", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding-top: 15px;
     padding-left: 5%;
     padding-right: 5%;
@@ -455,7 +455,7 @@
     text-align: left;
     font-family: "Circular Std Book 450", sans-serif;
     font-size: 1.4rem;
-    line-height: 2;
+    line-height: 1.3;
     color: #d5d5d5;
   }
   
@@ -539,5 +539,29 @@
     .card-text-odd, .card-text-even, .card-title-even, .card-title-odd{
       text-align: center;
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+   border-radius: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    background:linear-gradient(to top, rgba(216, 23, 248, 1),rgba(0, 225, 212, 1));
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgb(181, 4, 197); 
+  }
+   
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff; 
+    border-radius: 10px;
   }
   

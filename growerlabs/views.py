@@ -30,7 +30,7 @@ def contact(request):
             name + "has sent an email",
             template_email,
             settings.EMAIL_HOST_USER,
-            ['aparabiswas28@gmail.com', 'kalitaluna28@gmail.com']
+            ['aparabiswas28@gmail.com', 'debroyshayan@gmail.com']
 
         )
         email_obj.fail_silently = False
@@ -40,7 +40,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 def about(request):
-    profile = Profile.objects.all()
+    profile = Profile.objects.all().order_by('name')
     context = {
         "profile":profile,
     }

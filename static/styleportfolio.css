@@ -17,19 +17,19 @@
     justify-content: center;
     min-height: 100vh;
     background-image: linear-gradient(
-    to right top,
-    #610094,
-    #5a008d,
-    #540087,
-    #4d0080,
-    #47007a,
-    #410074,
-    #3a006f,
-    #340069,
-    #2c0063,
-    #25005d,
-    #1d0156,
-    #150050
+    to left top,
+    #3f0071,
+    #37016b,
+    #2f0165,
+    #28015e,
+    #200158,
+    #1d0256,
+    #1a0255,
+    #170353,
+    #180555,
+    #1a0757,
+    #1b0a59,
+    #1c0c5b
   );
 
 }
@@ -203,36 +203,18 @@
 
   }
 
-  @media (min-width: 540px){
-
-    .container .info,
-    .textarea {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-
-    /* .main-text{
-        font-size: 10px;
-    } */
-  }
-  
-  /* portfolio */
-  /* body{
-		background: linear-gradient(90deg, #e8e8e8 50%, #3d009e 50%);
-	} */
 	.portfolio{
-		padding:7%;
+		padding: 7% 7% 0% 7%;
     margin-top: 8vh;
 		text-align:center;
 	}
-	/* .heading{
-		background: #fff;
-		padding: 1%;
-		text-align: center;
-		box-shadow: 0px 0px 4px 0px #7a07e6;
-    font-family: 'Circular Std Book', sans-serif;
-    font-size: 20rem;
-	} */
+
+@media screen and (max-width: 600px){
+  .portfolio{
+    padding-bottom: 2em;
+    padding-top: 3em;
+  }
+}
 
 	.bio-info{
 		padding: 5%;
@@ -261,9 +243,8 @@
 	}
 	.bio-image{
 		text-align:center;
-
-    
 	}
+
 	.bio-image img{
 		border-radius:50%;
     width: 283px; 
@@ -315,9 +296,49 @@
     font-size: 1.5rem;
   }
 
-  .button{
-    padding: 5px 7px 5px 7px;
+  .skills_button{
+    padding: 4px 13px;
+    background-color: #4d0080;
+    border-radius: 50px;
+    color: white;
+    border: 2px solid white;
+    font-size: 0.8em;
+  }
+
+  .contrib_button{
+    padding: 4px 7px 4px 7px;
+    font-size: 0.9em;
     background-color: rgb(159, 17, 202);
-    border-radius: 5px;
+    border-radius: 3px;
+    border: 1px solid rgb(159, 17, 202);
   }
   
+  .footer{
+    background-color: #1f1b24;
+    padding-top: 3.8em;
+    padding-bottom: 3em;
+    text-align: center;
+  }
+
+  .gl_icons{
+    padding-bottom: 2.5em;
+  }
+
+  .gl_icons a{
+    padding: 1%;
+  }
+
+  .copyright p{
+    color: white;
+  }
+
+  .copyright a{
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+  }
+
+  .copyright a:hover{
+    color: #d75ddb;
+  }

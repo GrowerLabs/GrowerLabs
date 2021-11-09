@@ -15,21 +15,20 @@
 
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     background-image: linear-gradient(
-    to right top,
-    #610094,
-    #5a008d,
-    #540087,
-    #4d0080,
-    #47007a,
-    #410074,
-    #3a006f,
-    #340069,
-    #2c0063,
-    #25005d,
-    #1d0156,
-    #150050
+    to left top,
+    #3f0071,
+    #37016b,
+    #2f0165,
+    #28015e,
+    #200158,
+    #1d0256,
+    #1a0255,
+    #170353,
+    #180555,
+    #1a0757,
+    #1b0a59,
+    #1c0c5b
   );
 
 }
@@ -249,15 +248,15 @@
 
 }
 
-.main-text .name {
+.main-text .name .gl {
     text-align: center;
-    background-image: -webkit-linear-gradient(right, rgb(240, 47, 166) 30%, #bb0edd 60%, #5f4de6 60%);
-    /* background: -webkit-linear-gradient(to right, #4965D6 0%, #E326DD 67%, #F70877 100%);*/
-    /* background: -moz-linear-gradient(to right, #4965D6 0%, #E326DD 67%, #F70877 100%);
-    background: linear-gradient(to right, #4965D6 0%, #E326DD 67%, #F70877 100%);  */
+    background: #c400ff;
+    background: -webkit-linear-gradient(to right, #c400ff 0%, #ff67e7 87%);
+    background: -moz-linear-gradient(to right, #c400ff 0%, #ff67e7 87%);
+    background: linear-gradient(to right, #c400ff 0%, #ff67e7 87%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 30px;
+    font-size: 1.2em;
     font-family: 'Circular Std Bold', sans-serif;
 
 }
@@ -275,4 +274,34 @@
 .btn:hover {
     background: #be27cc;
     color: #FFF;
+}
+
+.footer{
+  background-color: #1f1b24;
+  padding-top: 3.8em;
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+.gl_icons{
+  padding-bottom: 2.5em;
+}
+
+.gl_icons a{
+  padding: 1%;
+}
+
+.copyright p{
+  color: white;
+}
+
+.copyright a{
+  color: white;
+  font-weight: 600;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
+.copyright a:hover{
+  color: #d75ddb;
 }

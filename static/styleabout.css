@@ -208,15 +208,6 @@ width: 100%;
 
   }
 
-  /* @media (min-width: 540px){
-
-    .container .info,
-    .textarea {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-  } */
-
 
 
   /* top-container */
@@ -231,16 +222,7 @@ width: 100%;
   line-height: 1.4;
   font-size: 1.6em;
 }
-@media(max-width:480px){
 
-  .initialtext{
-     text-align: center ;
-   }
-  
-.initialtext p{
-  list-style: 1;
-}
-}
 
 .title-image{
   margin-left: 25px;
@@ -276,9 +258,31 @@ width: 100%;
 .features-para p{
   margin-left: 7vw;
   margin-right: 7vw;
-  padding: 1vw 3vw 2vw 3vw;
+  padding: 3vw 3vw 2vw 3vw;
   line-height: 1.4;
   font-size: 1.6em;
+}
+
+@media(max-width:480px){
+
+  .initialtext{
+     text-align: center ;
+   }
+  
+.initialtext p{
+  list-style: 1;
+  line-height: 1.28;
+  font-size: 1.3em;
+}
+
+.features-para h1{
+  font-size: 2.8em;
+}
+
+.features-para p{
+  line-height: 1.28;
+  font-size: 1.3em;
+}
 }
 
 #team-testimonials{
@@ -331,6 +335,7 @@ width: 100%;
   text-align:center;
   box-shadow:0 10px 40px rgba(0, 0, 0, 0.5);
   transition:.5s ;
+  height: 100%;
 }
 
 .testimotionals #card .layer {
@@ -382,16 +387,18 @@ width: 100%;
 
 
 .testimotionals #card .content .details{
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .testimotionals #card .content .details h2 {
-font-size:18px;
-color:white;
+  font-size:21px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color:rgba(0, 225, 212, 1);
 
 }
-.testimotionals #card .content .details h2 span {
-font-size:18px;
+.testimotionals #card .content .details span {
+font-size:17.5px;
 color:rgb(248, 247, 248);
   transition:0.5s;
 
@@ -400,7 +407,7 @@ color:rgb(248, 247, 248);
   color:rgb(23, 85, 201);
   transition:0.5s;
 }
-.testimotionals #card:hover .content .details h2 span {
+.testimotionals #card:hover .content .details span {
   color:rgb(23, 85, 201);
   position:relative;
 }
@@ -412,9 +419,7 @@ color:rgb(248, 247, 248);
      margin: 0;
    }
 
-   /* .top-container{
-     margin-top: 35em;
-   } */
+  
  }
 
  .footer{
